@@ -13,6 +13,11 @@ function addDestination(req, res) {
     res.status(200).json(travelDestinations);
 }
 
+function getDestination(req, res) {
+    res.status(200).json(travelDestinations);
+}
+
 module.exports = {
-    addDestination
+    addDestination,
+    getDestination
 }

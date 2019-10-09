@@ -1,5 +1,5 @@
 import React from "react";
-//POINTS - 23
+//POINTS - 39
 //components
 import AddDestination from "./components/AddDestination";
 import MyDestinations from "./components/MyDestinations";

@@ -10,6 +10,10 @@ class MyDestinations extends React.Component {
         }
     }
 
+    updateAllDestinations = newArr => {
+        this.setState({allDestinations: newArr})
+    }
+
     componentDidMount() {
         axios.get("/api/travel")
         .then(response => {
@@ -25,7 +29,7 @@ class MyDestinations extends React.Component {
 
         let mappedDestinations = this.state.allDestinations.map((val) => {
             return (
-                <Place val={val} />
+                <Place val={val} updateAllDestinations={this.updateAllDestinations} />
             )
         })
 

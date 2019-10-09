@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+//POINTS - 23
+//components
+import AddDestination from "./components/AddDestination";
+import MyDestinations from "./components/MyDestinations";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      currentPage: ""
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <nav>
+          <button onClick={() => this.setState({currentPage: "add"})}>Add Place</button>
+          <button onClick={() => this.setState({currentPage: "view"})}>View Places</button>
+        </nav>
+        <h1>App Component</h1>
+        {
+          this.state.currentPage === "add" 
+        ?
+          <AddDestination />
+        : 
+          this.state.currentPage === "view"
+        ?
+          <MyDestinations />
+        : 
+          null
+        }
+      </div>
+    )
+  }
 }
 
 export default App;

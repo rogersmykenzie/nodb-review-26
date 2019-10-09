@@ -1,8 +1,10 @@
 {
   "name": "travel-site-review",
   "version": "0.1.0",
+  "main": "server/index.js",
   "private": true,
   "dependencies": {
+    "express": "^4.17.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0"
